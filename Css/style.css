@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --main-box-color: #1d1933;
+  --main-color: #ffa700;
+  --body-color: #121128;
+  --white-color: #fff;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+}
+body {
+  margin: 0;
+  background-color: var(--body-color);
+  height: 1000px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+/* .container {
+  margin-top: 64px;
+} */
+::-webkit-scrollbar {
+  background-color: rgb(0 0 0 / 10%);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--purple-color);
+}
+/* Start Header */
+header {
+  background-color: var(--main-box-color);
+  border-radius: 0 0 8px 8px;
+}
+header .container {
+  display: flex;
+  padding: 15px 0;
+  width: 85vw;
+  margin: auto;
+  justify-content: center;
+}
+header .container .main-links {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  font-size: 30px;
+}
+header .container .main-links a {
+  color: var(--white-color);
+  font-weight: bold;
+}
+header .container .main-links a {
+  --s: 0.1em;
+  --c: var(--main-color);
+
+  color: #0000;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, white 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+header .container .main-links a:hover {
+  --_p: 100%;
+}
+/* header .container .other {
+  display: flex;
+  gap: 25px;
+  font-size: 25px;
+  color: var(--main-color);
+  align-items: center;
+}
+header .container .other i {
+  cursor: pointer;
+  transition: 1s;
+}
+header .container .other lord-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+header .container .other i.uil-sun:hover {
+  transform: rotate(180deg);
+} */
+.header {
+  display: none;
+}
+@media (max-width: 762px) {
+  header .container .main-links {
+    gap: 27px;
+    font-size: 25px;
+  }
+  header .container .other {
+    gap: 20px;
+    font-size: 21px;
+  }
+  header .container .other lord-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 555px) {
+  header {
+    display: none;
+  }
+  .header {
+    display: block;
+  }
+}
+.header {
+  border-radius: 0 0 8px 8px;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  z-index: 9;
+  transform: translateY(105px);
+  background-color: var(--main-box-color);
+  transition: 0.3s;
+}
+.header .container {
+  display: flex;
+  padding: 15px 0;
+  width: 85vw;
+  margin: auto;
+  justify-content: space-between;
+}
+.header .container .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 25px;
+  width: 100%;
+}
+.header .container .links div a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.header .container .links div a p {
+  --s: 0.1em;
+  --c: var(--main-color);
+
+  color: #0000;
+  margin: 0;
+  font-weight: bold;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, white 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+.header .container .links div a p:hover {
+  --_p: 100%;
+}
+.header .container .links i {
+  color: var(--main-color);
+}
+.show-head {
+  color: var(--main-color);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+  z-index: 99;
+}
+.show {
+  transform: translateY(0) !important;
+}
