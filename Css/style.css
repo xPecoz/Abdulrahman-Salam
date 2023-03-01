@@ -5,6 +5,7 @@
   --body-color: #121128;
   --white-color: #fff;
   --test-width: 421px;
+  --main-hover-color: #7505f0;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -37,9 +38,11 @@ li {
 }
 ::-webkit-scrollbar {
   background-color: rgb(0 0 0 / 10%);
+  width: 12px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--purple-color);
+  background-color: var(--main-hover-color);
+  border-radius: 20px;
 }
 /* Start Header */
 header {
@@ -148,6 +151,7 @@ header .container .other i.uil-sun:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 30px;
   font-size: 25px;
   width: 100%;
@@ -243,3 +247,53 @@ header .container .other i.uil-sun:hover {
   }
 }
 /* End Home */
+.main-title {
+  font-size: 25px;
+  width: 8em;
+  height: 2em;
+  text-align: center;
+  line-height: 2em;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  position: relative;
+  transition: 0.5s;
+  margin: 0.8em;
+  margin: auto;
+  color: var(--main-hover-color);
+}
+.main-title::before,
+.main-title::after {
+  content: "";
+  position: absolute;
+  width: 0.6em;
+  height: 0.6em;
+  background-color: gainsboro;
+  border-radius: 50%;
+  transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+  top: calc(50% - 0.6em / 2);
+}
+.main-title::before {
+  left: 0;
+  z-index: -1;
+}
+.main-title::after {
+  right: 0;
+  z-index: -2;
+}
+.main-title:hover {
+  color: white;
+}
+.main-title:hover::before,
+.main-title:hover::after {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: var(--main-hover-color);
+}
+.main-title:hover::before {
+  top: 0;
+}
+.main-title:hover::after {
+  right: -0.4em;
+  filter: brightness(0.8);
+}
