@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800&display=swap");
 :root {
-  --main-box-color: #1d1933;
-  --main-color: #ffa700;
+  --main1-box-color: #1d1933;
+  --main-color: #f28600;
   --body-color: #121128;
   --white-color: #fff;
+  --test-width: 421px;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -18,7 +19,6 @@ html {
 body {
   margin: 0;
   background-color: var(--body-color);
-  height: 1000px;
 }
 a {
   text-decoration: none;
@@ -31,9 +31,10 @@ ul {
 li {
   list-style: none;
 }
-/* .container {
-  margin-top: 64px;
-} */
+.container {
+  width: 85vw;
+  margin: auto;
+}
 ::-webkit-scrollbar {
   background-color: rgb(0 0 0 / 10%);
 }
@@ -42,21 +43,21 @@ li {
 }
 /* Start Header */
 header {
-  background-color: var(--main-box-color);
+  background-color: var(--main1-box-color);
   border-radius: 0 0 8px 8px;
+  position: fixed;
+  width: 100vw;
 }
 header .container {
   display: flex;
   padding: 15px 0;
-  width: 85vw;
-  margin: auto;
   justify-content: center;
 }
 header .container .main-links {
   display: flex;
   align-items: center;
   gap: 5vw;
-  font-size: 30px;
+  font-size: 25px;
 }
 header .container .main-links a {
   color: var(--white-color);
@@ -100,6 +101,9 @@ header .container .other i.uil-sun:hover {
 .header {
   display: none;
 }
+.show-head {
+  display: none;
+}
 @media (max-width: 762px) {
   header .container .main-links {
     gap: 27px;
@@ -121,6 +125,9 @@ header .container .other i.uil-sun:hover {
   .header {
     display: block;
   }
+  .show-head {
+    display: block;
+  }
 }
 .header {
   border-radius: 0 0 8px 8px;
@@ -129,14 +136,12 @@ header .container .other i.uil-sun:hover {
   width: 100vw;
   z-index: 9;
   transform: translateY(105px);
-  background-color: var(--main-box-color);
+  background-color: var(--main1-box-color);
   transition: 0.3s;
 }
 .header .container {
   display: flex;
   padding: 15px 0;
-  width: 85vw;
-  margin: auto;
   justify-content: space-between;
 }
 .header .container .links {
@@ -185,3 +190,56 @@ header .container .other i.uil-sun:hover {
 .show {
   transform: translateY(0) !important;
 }
+/* End Header */
+/* Start Home */
+.home {
+  min-height: 100vh;
+  display: grid;
+  place-self: center;
+}
+.home .container {
+  display: flex;
+  justify-content: space-between;
+}
+.home .container .info {
+  width: fit-content;
+  color: white;
+  font-size: 1.5em;
+}
+.home .container .info .h1-home {
+  color: var(--main-color);
+  transition: 0.5s;
+  border-right: 2px solid var(--main-color);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: control-width 7s 1s steps(25) infinite both, blink 0.5s 1s infinite;
+  text-align: left;
+}
+@keyframes control-width {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: var(--test-width);
+  }
+  100% {
+    width: 0;
+  }
+}
+.home .container img {
+  height: 22vw;
+}
+@media (max-width: 1122px) {
+  .home .container .info {
+    font-size: 1.2em;
+  }
+  body {
+    --test-width: 339px;
+  }
+}
+@media (max-width: 875px) {
+  .home .container img {
+    display: none;
+  }
+}
+/* End Home */
