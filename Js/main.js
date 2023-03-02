@@ -11,3 +11,20 @@ buttonShow.addEventListener("click", () => {
     buttonShow.classList = "uil uil-apps show-head";
   }
 });
+
+// Active Page
+let mainLinks = document.querySelectorAll(".main-links a");
+let sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", function () {
+  sections.forEach(function (s) {
+    if (window.scrollY >= s.offsetTop - 350) {
+      mainLinks.forEach((ele) => {
+        ele.classList.remove("active");
+        `#${s.id}` == ele.getAttribute("href")
+          ? ele.classList.add("active")
+          : "";
+      });
+    }
+  });
+});
