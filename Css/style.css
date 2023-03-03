@@ -394,7 +394,6 @@ header .container .other i.uil-sun:hover {
 }
 /* End About */
 /* Start Skills */
-/* Start Skills */
 .skills .container .info {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -447,7 +446,6 @@ header .container .other i.uil-sun:hover {
     transform: skew(0, -5deg);
   }
 }
-
 .skills .container .info .image img {
   width: 100px;
   height: 100px;
@@ -494,51 +492,22 @@ header .container .other i.uil-sun:hover {
 .box i {
   font-size: 100px;
 }
-/* End Skills */
-
-/* .skills .container .info .box::before,
-.skills .container .info .image::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 200%;
-  z-index: -1;
-  height: 0%;
-  transform: skew(5deg);
-  bottom: -20px;
-  border-radius: 50%;
-  background-color: var(--main-hover-color);
-  animation: waving 2s ease-in-out infinite alternate;
-  transition: 0.5s;
+.skills .container .tools h2 {
+  text-align: center;
+  color: var(--main-color);
+  letter-spacing: 1.5px;
+  font-size: 35px;
+  margin-top: 60px;
 }
-.skills .container .info .box:hover,
-.skills .container .info .image:hover {
-  box-shadow: 0px 0px 30px 0px red;
-  transform: scale(1.05);
+.skills .container .tools .images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
 }
-.skills .container .info .image img {
-  width: 100px;
-  height: 100px;
+.skills .container .tools .images img {
+  width: 180px;
+  height: 180px;
+  margin: auto;
 }
-.skills .container .info .box::after,
-.skills .container .info .image::after {
-  content: attr(number) "%";
-  position: absolute;
-  color: grey;
-  top: 100%;
-  transition: 0.5s;
-}
-.box:hover {
-  box-shadow: 0px 0px 30px 0px red;
-  transform: scale(1.05);
-}
-.box:hover::after {
-  height: calc(var(--height) + 20px);
-}
-.box:hover::after {
-  top: 10px;
-}
-.box i {
-  font-size: 100px;
-} */
 /* End Skills */
