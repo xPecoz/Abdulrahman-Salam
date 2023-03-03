@@ -290,7 +290,7 @@ header .container .other i.uil-sun:hover {
   }
 }
 .home .container img {
-  height: 22vw;
+  height: 25vw;
 }
 @media (max-width: 1122px) {
   .home .container .info {
