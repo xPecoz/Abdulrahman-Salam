@@ -601,4 +601,9 @@ header .container .other i.uil-sun:hover {
 .card .details .center .view-web:hover {
   --_p: 100%;
 }
+@media (max-width: 470px) {
+  .project .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
 /* End Project */
