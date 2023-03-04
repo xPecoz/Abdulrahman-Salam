@@ -322,17 +322,6 @@ header .container .other i.uil-sun:hover {
   align-items: center;
   place-content: center;
 }
-/* .about .container .shap {
-  width: 600px;
-  height: 600px;
-  position: absolute;
-  right: -100px;
-  background-color: #6b00e3;
-  bottom: -100px;
-  z-index: -1;
-  border-radius: 50%;
-  filter: blur(113px);
-} */
 .about .container .info {
   cursor: text;
 }
@@ -497,7 +486,7 @@ header .container .other i.uil-sun:hover {
   color: var(--main-color);
   letter-spacing: 1.5px;
   font-size: 35px;
-  margin-top: 60px;
+  margin: 60px 0;
 }
 .skills .container .tools .images {
   display: flex;
@@ -506,8 +495,110 @@ header .container .other i.uil-sun:hover {
   justify-content: space-between;
 }
 .skills .container .tools .images img {
-  width: 180px;
-  height: 180px;
+  height: 170px;
   margin: auto;
 }
 /* End Skills */
+/* Start Project */
+.project {
+  min-height: 60vh;
+  background: linear-gradient(
+    272deg,
+    transparent,
+    var(--main1-box-color),
+    transparent
+  );
+}
+.project .container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 25px;
+  place-items: center;
+  padding: 30px 0;
+}
+.card {
+  position: relative;
+  background: #000;
+}
+.card .image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card .image img {
+  width: 100%;
+  transition: 0.5s;
+}
+.card:hover .image img {
+  opacity: 0.5;
+  transform: translateX(30%); /*100%*/
+}
+.card .details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: var(--body-color);
+  transition: 0.5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
+}
+.card:hover .details {
+  transform: perspective(2000px) rotateY(0deg);
+}
+.card .details .center {
+  padding: 20px;
+  text-align: center;
+  background: var(--main1-box-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.card .details .center h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  line-height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.card .details .center p {
+  margin: 10px 0;
+  padding: 0;
+  color: white;
+}
+.card .details .center .html,
+.card .details .center .css,
+.card .details .center .js {
+  font-weight: bold;
+}
+.card .details .center .html {
+  color: #f16529;
+}
+.card .details .center .css {
+  color: #2965f1;
+}
+.card .details .center .js {
+  color: #f7e018;
+}
+.card .details .center .view-web {
+  --s: 0.1em;
+  --c: var(--main-color);
+
+  color: #0000;
+  margin: 0;
+  font-weight: bold;
+  padding-bottom: var(--s);
+  background: linear-gradient(90deg, var(--c) 50%, white 0)
+      calc(100% - var(--_p, 0%)) / 200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100% / var(--_p, 0%) var(--s) no-repeat;
+  -webkit-background-clip: text, padding-box;
+  background-clip: text, padding-box;
+  transition: 0.5s;
+}
+.card .details .center .view-web:hover {
+  --_p: 100%;
+}
+/* End Project */
