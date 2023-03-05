@@ -27,7 +27,7 @@
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#project">Project</a>
-          <a href="#">Contact</a>
+          <a href="#contact">Contact</a>
         </div>
         <div class="other">
           <!-- <i class="uil uil-sun"></i> -->
@@ -72,7 +72,7 @@
             </a>
           </div>
           <div>
-            <a href="#"
+            <a href="#contact"
               ><i class="fa-solid fa-phone"></i>
               <p>Contact</p>
             </a>
@@ -326,11 +326,37 @@
         </div>
       </div>
     </section>
+    <p class="main-title" style="margin-top: 100px">Contact</p>
+    <section class="contact" id="contact">
+      <div class="container">
+        <form class="contact_form">
+          <h3>Your Massage</h3>
+          <input type="text" id="fullName" placeholder="Your Name" required />
+          <input type="email" id="email_id" placeholder="Your Email" required />
+          <input type="text" id="phone_id" placeholder="Your Phone" required />
+          <textarea
+            id="message"
+            placeholder="What Do You Want ?"
+            required
+          ></textarea>
+          <button class="send" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
     <script src="Js/main.js"></script>
     <script
       src="https://kit.fontawesome.com/102e410967.js"
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("15PMwBSR0r-57Qq33");
+      })();
+    </script>
   </body>
 </html>

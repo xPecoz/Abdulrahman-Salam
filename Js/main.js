@@ -28,3 +28,24 @@ window.addEventListener("scroll", function () {
     }
   });
 });
+
+// Send Email
+let form = document.querySelector("form");
+let submit = document.querySelector(`button.send`);
+
+form.onsubmit = (e) => {
+  e.preventDefault();
+  function SendMail() {
+    let params = {
+      from_name: document.getElementById("fullName").value,
+      email: document.getElementById("email_id").value,
+      phone: document.getElementById("phone_id").value,
+      message: document.getElementById("message").value,
+    };
+
+    emailjs
+      .send("service_q2r7uiy", "template_jc4gcii", params)
+      .then((mas) => alert("has been sent😊"));
+  }
+  submit.onclick = SendMail();
+};
