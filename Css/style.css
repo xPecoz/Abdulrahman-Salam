@@ -6,7 +6,6 @@
   --white-color: #fff;
   --test-width: 402px;
   --main-hover-color: #7505f0;
-  --height: 80%;
 }
 * {
   -webkit-box-sizing: border-box;
@@ -50,6 +49,73 @@ li {
   border-radius: 20px;
 }
 .main-title {
+  --offset: 10px;
+  --border-size: 2px;
+  display: block;
+  position: relative;
+  padding: 20px 50px;
+  border: 0;
+  background: transparent;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  outline: none;
+  font-weight: bold;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+  transition: 0.8s ease;
+  margin: 70px auto;
+  font-size: 20px;
+}
+.main-title:hover {
+  background: hsla(269, 96%, 48%, 0.03);
+  color: var(--main-hover-color);
+}
+.button__horizontal,
+.button__vertical {
+  position: absolute;
+  top: var(--horizontal-offset, 0);
+  right: var(--vertical-offset, 0);
+  bottom: var(--horizontal-offset, 0);
+  left: var(--vertical-offset, 0);
+  transition: transform 0.8s ease;
+  will-change: transform;
+}
+.button__horizontal::before,
+.button__vertical::before {
+  content: "";
+  position: absolute;
+  border: inherit;
+}
+.button__horizontal {
+  --vertical-offset: calc(var(--offset) * -1);
+  border-top: var(--border-size) solid currentcolor;
+  border-bottom: var(--border-size) solid currentcolor;
+}
+.button__horizontal::before {
+  top: calc(var(--vertical-offset) - var(--border-size));
+  bottom: calc(var(--vertical-offset) - var(--border-size));
+  left: calc(var(--vertical-offset) * -1);
+  right: calc(var(--vertical-offset) * -1);
+}
+.main-title:hover .button__horizontal {
+  transform: scaleX(0);
+}
+.button__vertical {
+  --horizontal-offset: calc(var(--offset) * -1);
+  border-left: var(--border-size) solid currentcolor;
+  border-right: var(--border-size) solid currentcolor;
+}
+.button__vertical::before {
+  top: calc(var(--horizontal-offset) * -1);
+  bottom: calc(var(--horizontal-offset) * -1);
+  left: calc(var(--horizontal-offset) - var(--border-size));
+  right: calc(var(--horizontal-offset) - var(--border-size));
+}
+.main-title:hover .button__vertical {
+  transform: scaleY(0);
+}
+/* .main-title {
   font-size: 25px;
   width: 8em;
   height: 2em;
@@ -93,13 +159,16 @@ li {
   border-radius: 0;
   background-color: var(--main-hover-color);
 }
+.main-title:hover::after {
+  opacity: 0;
+}
 .main-title:hover::before {
   top: 0;
 }
 .main-title:hover::after {
   right: -0.4em;
   filter: brightness(0.8);
-}
+} */
 /* Start Header */
 header {
   background-color: var(--main1-box-color);
@@ -140,25 +209,6 @@ header .container .main-links a:hover,
 header .container .main-links a.active {
   --_p: 100%;
 }
-/* header .container .other {
-  display: flex;
-  gap: 25px;
-  font-size: 25px;
-  color: var(--main-color);
-  align-items: center;
-}
-header .container .other i {
-  cursor: pointer;
-  transition: 1s;
-}
-header .container .other lord-icon {
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-}
-header .container .other i.uil-sun:hover {
-  transform: rotate(180deg);
-} */
 .header {
   display: none;
 }
@@ -188,6 +238,11 @@ header .container .other i.uil-sun:hover {
   }
   .show-head {
     display: block;
+  }
+}
+@media (max-width: 656px) {
+  header .container .main-links {
+    font-size: 21px;
   }
 }
 .header {
@@ -255,14 +310,11 @@ header .container .other i.uil-sun:hover {
 }
 /* End Header */
 /* Start Home */
-.home {
-  min-height: 80vh;
-  display: grid;
-  place-self: center;
-}
 .home .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
 }
 .home .container .info {
   width: fit-content;
@@ -290,7 +342,19 @@ header .container .other i.uil-sun:hover {
   }
 }
 .home .container img {
-  height: 25vw;
+  height: 30vw;
+  animation: img-up 3s infinite linear;
+}
+@keyframes img-up {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @media (max-width: 1122px) {
   .home .container .info {
@@ -382,6 +446,44 @@ header .container .other i.uil-sun:hover {
   will-change: transform;
 }
 /* End About */
+/* Start Services */
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  place-content: center;
+  gap: 30px;
+}
+.services .container .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--main1-box-color);
+  padding: 15px;
+  border-radius: 8px;
+}
+.services .container lord-icon {
+  width: 200px;
+  height: 200px;
+}
+.services .container .box h3 {
+  color: var(--main-color);
+  margin: 0;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+}
+@media (max-width: 374px) {
+  .services .container .box h3 {
+    font-size: 22px;
+  }
+}
+.services .container .box p {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  line-height: 2;
+}
+/* End Services */
 /* Start Skills */
 .skills .container .info {
   display: grid;
@@ -450,7 +552,7 @@ header .container .other i.uil-sun:hover {
   transform: translateX(-40%);
   transition: 0.5s;
 }
-.box:hover {
+.skills .container .box:hover {
   box-shadow: 0px 0px 30px 0px red;
   transform: scale(1.05);
 }
@@ -480,7 +582,7 @@ header .container .other i.uil-sun:hover {
 .skills .container .info .image:hover::after {
   top: 10px;
 }
-.box i {
+.skills .container .box i {
   font-size: 100px;
 }
 .skills .container .tools h2 {
@@ -676,3 +778,31 @@ header .container .other i.uil-sun:hover {
   }
 }
 /* End Contact */
+/* Start Footer */
+footer {
+  background-color: var(--main1-box-color);
+}
+footer .container {
+  display: grid;
+  place-items: center;
+  padding: 7px 0;
+  min-height: 60px;
+}
+footer .container p {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2;
+}
+footer .container a {
+  color: var(--main-color);
+  font-weight: bold;
+}
+@media (max-width: 470px) {
+  .services .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+/* End Footer */

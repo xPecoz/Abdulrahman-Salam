@@ -14,16 +14,14 @@ buttonShow.addEventListener("click", () => {
 
 // Active Page
 let mainLinks = document.querySelectorAll(".main-links a");
-let sections = document.querySelectorAll("section");
+let sections = document.querySelectorAll(".main-title, section.home");
 
 window.addEventListener("scroll", function () {
   sections.forEach(function (s) {
-    if (window.scrollY >= s.offsetTop - 350) {
-      mainLinks.forEach((ele) => {
-        ele.classList.remove("active");
-        `#${s.id}` == ele.getAttribute("href")
-          ? ele.classList.add("active")
-          : "";
+    if (window.scrollY >= s.offsetTop - 200) {
+      mainLinks.forEach((e) => {
+        e.classList.remove("active");
+        `#${s.id}` == e.getAttribute("href") ? e.classList.add("active") : "";
       });
     }
   });
