@@ -420,6 +420,29 @@ header .container .main-links a.active {
   margin: auto;
   margin-bottom: 20px;
 }
+.about .container .icons {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10px auto 40px auto;
+  font-size: 40px;
+}
+.about .container .icons i {
+  transition: 0.3s;
+}
+.about .container .icons i:hover {
+  transform: scale(1.8) rotate(360deg);
+}
+@media (max-width: 560px) {
+  .about .container .icons {
+    width: 75%;
+  }
+}
+@media (max-width: 354px) {
+  .about .container .icons {
+    width: 100%;
+  }
+}
 .coolBeans::after {
   background-color: var(--main-hover-color);
   border-radius: 3rem;
