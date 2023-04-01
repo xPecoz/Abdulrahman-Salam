@@ -115,60 +115,6 @@ li {
 .main-title:hover .button__vertical {
   transform: scaleY(0);
 }
-/* .main-title {
-  font-size: 25px;
-  width: 8em;
-  height: 2em;
-  text-align: center;
-  line-height: 2em;
-  font-family: sans-serif;
-  text-transform: capitalize;
-  position: relative;
-  transition: 0.5s;
-  margin: 0.8em;
-  margin: auto;
-  color: gainsboro;
-  margin-bottom: 70px;
-}
-.main-title::before,
-.main-title::after {
-  content: "";
-  position: absolute;
-  width: 0.6em;
-  height: 0.6em;
-  background-color: gainsboro;
-  border-radius: 50%;
-  transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
-  top: calc(50% - 0.6em / 2);
-}
-.main-title::before {
-  left: 0;
-  z-index: -1;
-}
-.main-title::after {
-  right: 0;
-  z-index: -2;
-}
-.main-title:hover {
-  color: white;
-}
-.main-title:hover::before,
-.main-title:hover::after {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  background-color: var(--main-hover-color);
-}
-.main-title:hover::after {
-  opacity: 0;
-}
-.main-title:hover::before {
-  top: 0;
-}
-.main-title:hover::after {
-  right: -0.4em;
-  filter: brightness(0.8);
-} */
 /* Start Header */
 header {
   background-color: var(--main1-box-color);
@@ -596,10 +542,10 @@ header .container .main-links a.active {
   height: calc(10% + 20px);
 }
 .skills .container .info .box:nth-child(5):hover::before {
-  height: calc(70% + 20px);
+  height: calc(85% + 20px);
 }
 .skills .container .info .box:nth-child(6):hover::before {
-  height: calc(50% + 20px);
+  height: calc(75% + 20px);
 }
 .skills .container .info .box:hover::after,
 .skills .container .info .image:hover::after {
@@ -696,9 +642,7 @@ header .container .main-links a.active {
   padding: 0;
   color: white;
 }
-.card .details .center .html,
-.card .details .center .css,
-.card .details .center .js {
+.card .details .center span {
   font-weight: bold;
 }
 .card .details .center .html {
@@ -709,6 +653,15 @@ header .container .main-links a.active {
 }
 .card .details .center .js {
   color: #f7e018;
+}
+.card .details .center .php {
+  color: #7175aa;
+}
+.card .details .center .my {
+  color: #00618a;
+}
+.card .details .center .sql {
+  color: #e48e00;
 }
 .card .details .center .view-web {
   --s: 0.1em;
@@ -827,5 +780,21 @@ footer .container a {
   .services .container {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
+}
+.up {
+  position: fixed;
+  z-index: 99;
+  right: -50px;
+  bottom: 20px;
+  background-color: var(--main-hover-color);
+  padding: 8px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 20px;
+}
+.up.show {
+  right: 20px;
 }
 /* End Footer */

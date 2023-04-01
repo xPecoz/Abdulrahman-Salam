@@ -1,3 +1,16 @@
+let btnScrol = document.querySelector(".up");
+
+btnScrol.onclick = function () {
+  window.scrollTo({
+    top: 0,
+  });
+};
+
+window.addEventListener("scroll", () => {
+  this.scrollY >= 600
+    ? btnScrol.classList.add("show")
+    : btnScrol.classList.remove("show");
+});
 // Show And Hidden Header
 let buttonShow = document.querySelector("i.show-head");
 let header = document.querySelector(".header");
