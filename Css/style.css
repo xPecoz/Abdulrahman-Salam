@@ -535,7 +535,6 @@ header .container .main-links a.active {
 .skills .container .info .box:nth-child(4):hover::before,
 .skills .container .info .box:nth-child(7):hover::before,
 .skills .container .info .box:nth-child(8):hover::before,
-.skills .container .info .box:nth-child(9):hover::before,
 .skills .container .info .box:nth-child(10):hover::before,
 .skills .container .info .box:nth-child(11):hover::before,
 .skills .container .info .box:nth-child(12):hover::before {
@@ -544,8 +543,9 @@ header .container .main-links a.active {
 .skills .container .info .box:nth-child(5):hover::before {
   height: calc(85% + 20px);
 }
-.skills .container .info .box:nth-child(6):hover::before {
-  height: calc(75% + 20px);
+.skills .container .info .box:nth-child(6):hover::before,
+.skills .container .info .box:nth-child(9):hover::before {
+  height: calc(80% + 20px);
 }
 .skills .container .info .box:hover::after,
 .skills .container .info .image:hover::after {
